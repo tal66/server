@@ -60,7 +60,7 @@ public class Client {
         MessageDigest md = MessageDigest.getInstance("SHA-256", "BC");
         System.out.println("client: received text");
         reader.lines().forEach(line -> {
-            md.update((line + "\r\n").getBytes(StandardCharsets.UTF_8));
+            md.update((line + System.lineSeparator()).getBytes(StandardCharsets.UTF_8));
             System.out.println("\t" + line);
         });
 
